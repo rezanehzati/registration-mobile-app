@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Way Of Life</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0" />
+
+
+<!--main css -->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<!--larg layout 
+<link rel="stylesheet" type="text/css" media="only screen and (min-device-width:1024) and (max-device-width:1600px)" href="css/pc_layout.css"/>-->
+<!-- tablet-->
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:768px) and (max-width:2000px)" href="css/tablet_layout.css"/>
+<!-- galaxy phone -->
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:321px) and (max-width:767px)" href="css/galaxy 5_layout.css"/>
+<!--iphone4-->
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:50px) and (max-width:320px)" href="css/iphone4_layout.css"/>
+
+
+<!--google map font-->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+<!-- montserrat font -->
+<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<!-- pacifico font -->
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Pacifico" />
+<!-- open sans -->
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" />
+<!-- google map script -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+<!-- cropper -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+</head>
+
+<body onload="initialize()" >
+<div class="header"> <a id="backarrow"><img src="images/arrow.png"></a> </div>
+<div class="content">
+    <form method="post" action="#">
+        <img src="images/jomobee-avatar.png" class="logo"/>
+        <div class="arrow-left"></div>
+        <div id="msg" class="msg"> <span class="pacifico">Hello there Champ !</span> <br>
+            <span class="detail">Get buzy & start creating your post Why not start with adding a pic
+            <p class="addphotoicon">here</p>
+            </span> </div>
+        <div id="usersphoto"> <span id="changephoto">change</span>
+            <input type="file" id="inputphoto" class="cropit-image-input">
+            <div class="cropit-image-preview"></div>
+        </div>
+        <div style="position:relative;">
+       <span class="wrong" id="titlewrong">!</span><textarea id="title" rows="1" data-min-rows="1"   placeholder="Title" maxlength="70" ></textarea>
+       </div>
+        <br>
+       <span class="wrong" id="descriptionwrong">!</span> <textarea id="description" rows="1" data-min-rows="1"  placeholder="Add description"></textarea>
+        <div class="checkboxesarea">
+            <div id="date-button" type="button" style="border:none; padding:0;">
+               <span class="wrong" id="datewrong">!</span> <input  id="date-input" type="text" placeholder="Add start date:">
+            </div>
+            <div id="date-picker"> </div>
+            <p class="p2">date ongoing</p>
+            <label>
+                <input id="checkbox2" type="checkbox" onchange="valueChanged()">
+                <span id="span2"></span></label>
+            <br>
+            <span id="locationwrong">!</span><input id="autocomplete" onfocus="geolocate()" placeholder="Add task location" type="text" >
+            <p class="p">task anywhere</p>
+            <label>
+                <input id="checkbox" type="checkbox">
+                <span id="span"></span></label>
+        </div>
+        <hr id="line">
+        <div class="status">
+            <p id="joinus" class="lookingfor">Join us as</p>
+            <!--<input type="text" id="joinus" class="lookingfor" value="Join us as" disabled>-->
+            <p class="change" id="change">change</p>
+            <div id="dropdown"></div>
+        </div>
+        <div id="chose">
+            <div class="triangle">
+                <div></div>
+            </div>
+            <div class="options">
+                <ul class="items" style="padding-left: 0px;" >
+                    <li id="atend">Attend as</li>
+                    <hr class="diving">
+                    <li id="why">Why not work?</li>
+                    <hr class="diving">
+                    <li id="lookfor">Join us as</li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <ul class="taglist">
+            <li> 
+                <input id="notebefore" placeholder="ex. Berista"  type="text" onchange="SetDefault();" onpaste="this.onchange();" oninput="this.onchange();" />
+                
+                <a class="add">+</a>
+                <span id="number">(
+                <input type="number" id="value" class="value1" disabled>
+                )</span>
+                <span  id="tagwrong">!</span>
+                <input type="number" id="selectnumber" class="selectnumber" value="1" maxlength="10">
+                <br>
+                <div class="arrow-up"></div>
+            </li>
+        </ul>
+        <!--<input class="export" onclick="myFunction()" type="post" value="POST">-->
+       <!-- <input class="post"  name="submit" type="submit" value="POST">
+        <button  class="post" id="">POST</button>-->
+        <p class="errormsg"><span class="mark">!</span><span class="errordetail">Chillax! You need to fill out all areas<br>marked with <i>"</i>&nbsp;!<i>"</i>&nbsp; before posting.</span></p>
+        <button type="button" class="post" id="" value="POST" onclick="checkForm($(this))">POST</button>
+       
+    </form>
+</div>
+
+<!-- script  jquery--> 
+<script src="script/jquery.v2.0.3.js" ></script> 
+
+<!-- main script --> 
+<script src="script/script.js"></script> 
+
+<!-- cropper --> 
+<script src="http://scottcheng.github.io/cropit/scripts/vendor.js"></script> 
+<script src="js/index.js"></script> 
+
+<!-- date --> 
+<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script> 
+
+<!-- --> 
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --> 
+<script>
+          (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+          </script>
+</body>
+</html>

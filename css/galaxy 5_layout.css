@@ -1,0 +1,86 @@
+
+html { background-color: #edf1f5; }
+
+.header
+{
+	top: 0px;
+	margin: 0px;
+	min-width: 350px;
+	height: 42px;
+	background-color: #fff;
+}
+
+#backarrow img { padding-top: 10px; }
+
+#selectnumber { left: 205px; }
+
+.arrow-up { left: 240px; }
+
+.save
+{
+	top: 6px;
+	left: 266px;
+}
+
+.remover
+{
+	top: 7px;
+	left: 320px;
+}
+
+#number { top: 0px; }
+
+.cropit-image-preview
+{
+	width: 350px;
+	margin-top: -48px;
+}
+
+body
+{
+	width: 350px;
+	margin: 0px auto;
+	min-height: 700px;
+	background-repeat: no-repeat;
+}
+
+.arrow-left
+{
+	
+	left: 17%;
+}
+
+.edit
+{
+	margin-top: 0px;
+	left: 88%;
+	top: -1.5px;
+}
+
+input#notebefore[disabled] { top: 0px; left:57px; margin:0px; padding:0px; }
+#notebefore { 
+width:140px;
+}
+
+.triangle
+{
+	position: absolute;
+	margin-top: 0px;
+	margin-left: 50px;
+	width: 20px;
+	
+}
+
+.square
+{
+	left: 10%;
+	top: -1px;
+}
+
+.value1
+{
+	width:8px;
+}
+.dots {
+top:-4px;	
+}
